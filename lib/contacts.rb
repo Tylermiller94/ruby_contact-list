@@ -1,5 +1,5 @@
 class Contact
-  attr_accessor(:first_name, :last_name)
+  attr_accessor(:first_name, :last_name, :job_title, :company, :contact_type, :street_address, :city, :state, :zip, :phone_number)
   @@contacts = []
   def initialize(attributes)
     @first_name = attributes.fetch(:first_name)
@@ -11,11 +11,15 @@ class Contact
     @city = attributes.fetch(:city)
     @state = attributes.fetch(:state)
     @zip = attributes.fetch(:zip)
-    @phone_number = attributes.fetch(:phone_number)
+    @phone_number = [attributes.fetch(:phone_number)]
   end
 
   def save()
     @@contacts.push(self)
+  end
+
+  def add_phone_number(phone_number)
+    self.phone_number.push(phone_number)
   end
 
   def self.all()
