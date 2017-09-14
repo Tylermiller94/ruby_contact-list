@@ -1,4 +1,5 @@
 class Contact
+  attr_accessor(:first_name, :last_name)
   @@contacts = []
   def initialize(attributes)
     @first_name = attributes.fetch(:first_name)

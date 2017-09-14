@@ -1,0 +1,54 @@
+<h1>My Contacts!</h1>
+<ul>
+  <% @contacts.each do |contact| %>
+
+    <li><a href="/contacts/<%= contact.last_name %>"><%= contact.first_name   %> <%=contact.last_name%></a></li>
+  <% end %>
+</ul>
+
+
+<h2>Add contact:</h2>
+
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="first_name">First Name</label>
+    <input id="first_name" name="first_name" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="last_name">Last Name</label>
+    <input id="last_name" name="last_name" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="job_title">Job Title</label>
+    <input id="job_title" name="job_title" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="company">Company</label>
+    <input id="company" name="company" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="contact_type">Contact Type</label>
+    <input id="contact_type" name="contact_type" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="street_address">Street Address</label>
+    <input id="street_address" name="street_address" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="city">City</label>
+    <input id="city" name="city" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="state">State</label>
+    <input id="state" name="state" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="zip">Zip</label>
+    <input id="zip" name="zip" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="phone_number">Phone Number</label>
+    <input id="phone_number" name="phone_number" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add!</button>
+</form>
