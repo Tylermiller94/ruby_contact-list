@@ -22,4 +22,16 @@ class Contact
     @@contacts
   end
 
+  def self.empty()
+    @@contacts = []
+  end
+
+  def self.find_by_last_name(last_name)
+    @@contacts.each do |contact|
+      if contact.last_name == last_name
+        return contact
+      end
+    end
+  end
+
 end

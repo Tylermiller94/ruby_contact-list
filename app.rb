@@ -24,7 +24,5 @@ post('/') do
   @contacts = Contact.all()
   contact = Contact.new({:first_name => first_name, :last_name => last_name, :job_title => job_title, :company => company, :contact_type => contact_type, :street_address => street_address, :city => city, :state => state, :zip => zip, :phone_number => phone_number})
   contact.save()
-
-
   erb(:index)
 end
